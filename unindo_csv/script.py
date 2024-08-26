@@ -14,6 +14,7 @@ for arquivo in os.listdir(pasta_csv):
 
         # Lê o CSV e adiciona à lista de DataFrames
         df = pd.read_csv(caminho_arquivo)
+        df['Município'] = str(os.path.splitext(arquivo)[0])
         dataframes.append(df)
 
 # Concatena todos os DataFrames
